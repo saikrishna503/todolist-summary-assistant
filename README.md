@@ -108,3 +108,38 @@ todo-summary-assistant/
 ├── .gitignore             # Files to ignore in git
 ├── README.md              # Project documentation
 └── package.json           # Project configuration and scripts
+
+
+Slack and LLM Setup Guidance
+Slack Incoming Webhook
+Go to your Slack workspace and create a new Incoming Webhook integration.
+
+Copy the generated Webhook URL.
+
+Paste the URL into your .env as SLACK_WEBHOOK_URL.
+
+The app sends todo summaries to the configured Slack channel via this webhook.
+
+OpenAI API Key
+Sign up or log in to OpenAI.
+
+Generate an API key under your account.
+
+Set this key in .env as OPENAI_API_KEY.
+
+The backend uses this key to call the OpenAI API for generating todo summaries.
+
+Design and Architecture Decisions
+Separation of Concerns: Frontend built with React to handle UI/UX, while backend built with Express.js handles API requests, OpenAI integration, and Slack notifications.
+
+Environment Configuration: Sensitive keys and URLs stored in .env to avoid committing secrets.
+
+API Design: RESTful endpoints for CRUD operations on todos and for triggering summary generation.
+
+AI Integration: Backend calls OpenAI’s GPT model asynchronously to summarize user todos.
+
+Notification System: Slack webhook sends summary messages for team collaboration and notifications.
+
+Scalability: Modular architecture allows easy addition of new features like user authentication or multi-channel notifications.
+
+Security: GitHub secret scanning enabled to prevent accidental push of API keys.
