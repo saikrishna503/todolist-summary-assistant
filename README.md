@@ -54,39 +54,41 @@ Todo Summary Assistant is a full-stack web application designed to help users ma
 - Slack for team communication and notifications.
 
 ---
- Slack and LLM Setup Guidance
-Slack Incoming Webhook
-Go to your Slack workspace and create a new Incoming Webhook integration.
 
-Copy the generated Webhook URL.
+ ## Slack and LLM Setup Guidance
+ ## Slack Incoming Webhook
+   - Go to your Slack workspace and create a new Incoming Webhook integration.
 
-Paste the URL into your .env as SLACK_WEBHOOK_URL.
+   - Copy the generated Webhook URL.
 
-The app sends todo summaries to the configured Slack channel via this webhook.
+   - Paste the URL into your .env as SLACK_WEBHOOK_URL.
 
-OpenAI API Key
-Sign up or log in to OpenAI.
+   - The app sends todo summaries to the configured Slack channel via this webhook.
 
-Generate an API key under your account.
+## OpenAI API Key
+  - Sign up or log in to OpenAI.
 
-Set this key in .env as OPENAI_API_KEY.
+  - Generate an API key under your account.
 
-The backend uses this key to call the OpenAI API for generating todo summaries.
+  - Set this key in .env as OPENAI_API_KEY.
 
-Design and Architecture Decisions
-Separation of Concerns: Frontend built with React to handle UI/UX, while backend built with Express.js handles API requests, OpenAI integration, and Slack notifications.
+  - The backend uses this key to call the OpenAI API for generating todo summaries.
 
-Environment Configuration: Sensitive keys and URLs stored in .env to avoid committing secrets.
+## Design and Architecture Decisions
 
-API Design: RESTful endpoints for CRUD operations on todos and for triggering summary generation.
+- Separation of Concerns: Frontend built with React to handle UI/UX, while backend built with Express.js handles API requests, OpenAI integration, and Slack notifications.
 
-AI Integration: Backend calls OpenAI’s GPT model asynchronously to summarize user todos.
+- Environment Configuration: Sensitive keys and URLs stored in .env to avoid committing secrets.
 
-Notification System: Slack webhook sends summary messages for team collaboration and notifications.
+- API Design: RESTful endpoints for CRUD operations on todos and for triggering summary generation.
 
-Scalability: Modular architecture allows easy addition of new features like user authentication or multi-channel notifications.
+- AI Integration: Backend calls OpenAI’s GPT model asynchronously to summarize user todos.
 
-Security: GitHub secret scanning enabled to prevent accidental push of API keys.
+- Notification System: Slack webhook sends summary messages for team collaboration and notifications.
+
+- Scalability: Modular architecture allows easy addition of new features like user authentication or multi-channel notifications.
+
+- Security: GitHub secret scanning enabled to prevent accidental push of API keys.
 
 
 ## Installation
